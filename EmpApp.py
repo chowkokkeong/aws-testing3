@@ -23,6 +23,9 @@ table = 'employee'
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
+    if request.method == 'POST':
+            id = request.form.get('id')
+            return redirect(url_for('editemp', id=id))
     cursor = db_conn.cursor()
     cursor.execute("SELECT * FROM employee")
     data = cursor.fetchall()
@@ -95,7 +98,7 @@ def AddEmp():
 
 @app.route("/editemp")
 def GetEmpData():
-    id = request.form['emp_id']
+    id = request.args.get('id', None)
     cursor = db_conn.cursor()
     cursor.execute("SELECT * FROM employee where emp_id = %s", (id))
     data = cursor.fetchall()

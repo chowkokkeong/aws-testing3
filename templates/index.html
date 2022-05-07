@@ -297,17 +297,16 @@
 									<tbody>
 										{% for row in data %}	
 										<tr>
-											<td><div class="d-flex align-items-center"><img class="rounded-circle" src="s3://chowkokkeong-employee/emp-id-{{row[0]}}_image_file" width="40"></div></td>
+											<td><div class="d-flex align-items-center"><img class="rounded-circle" src="https://i.kym-cdn.com/photos/images/masonry/001/923/852/991" width="40"></div></td>
 											<td>{{row[0]}}</td>
 											<td>{{row[1]}}</td>
 											<td>{{row[2]}}</td>
 											<td>{{row[3]}}</td>
 											<td>{{row[4]}}</td>
 											<td>
-												<form action="/editemp" method="post">
-												<button class="btn btn-warning">Edit</button>
+				
+												<button class="btn btn-warning" formaction="/editemp">Edit</button>
 												<button class="btn btn-danger">Delete</button>	
-												</form>
 											</td>
 										</tr>
 										{% endfor %}
